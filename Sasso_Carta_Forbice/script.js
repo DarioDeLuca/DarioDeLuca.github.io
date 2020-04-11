@@ -1,30 +1,59 @@
 const button1 = document.getElementById('bottone_1')
 const button2 = document.getElementById('bottone_2')
 const button3 = document.getElementById('bottone_3')
-const button4 = document.getElementById('bottone_4')
 
-const selezione_bot = () => {
+let contatore_giocatore=0
+let contatore_ia=0
+
+function VincitaGiocatore(){
+    contatore_giocatore+=1
+    console.log("Hai vinto questo round; il tuo punteggio è ora di "+ contatore_giocatore + " a " + contatore_ia)
+}
+function SconfittaGiocatore(){
+    contatore_ia+=1
+    console.log("Hai perso questo round; il tuo punteggio è ora di "+ contatore_giocatore + " a " + contatore_ia)
+}
+
+let Risultato = function (scelta_giocatore, scelta_ia) { 
+    console.log("Sto calcolando...")
+    if(scelta_giocatore === scelta_ia){console.log("Pareggio!, nessuno riceve un punto")}
+    else{if(scelta_giocatore==="Sasso"){
+            if(scelta_ia==="Forbice"){VincitaGiocatore()}//vince il player (sasso rompe forbice)
+            else{SconfittaGiocatore()} //vince l'ia (carta avvolge sasso)
+         }
+          if(scelta_giocatore==="Forbice"){
+              if(scelta_ia==="Carta"){VincitaGiocatore()}//vince il player (forbice taglia carta)
+              else{SconfittaGiocatore()}//vince l'ia (sasso rompe forbice)
+          }
+          if(scelta_giocatore==="Carta"){
+            if(scelta_ia==="Sasso"){VincitaGiocatore()}//vince il player (carta avvolge sasso)
+            else{SconfittaGiocatore()}//vince l'ia (forbice taglia carta)
+          }
+        }
+}
+   
+function MossaComputer(){
 	const lista = ["Sasso", "Carta", "Forbice"]
-	const scelta =lista[Math.floor(Math.random() * 3)]
-	return(scelta)
+    const scelta =lista[Math.floor(Math.random() * lista.length)];
+    console.log("il pc ha scelto " + scelta)
+    return scelta
 }
 
-const selezione_player_Sasso = () => {
-	const scelta_player = "Sasso"
-	return(scelta_player)
+
+document.getElementById('bottone_1').onclick = Sasso
+function Sasso(){
+    console.log ("Hai scelto Sasso")
+    Risultato("Sasso", MossaComputer())
 }
 
-const selezione_player_Carta = () => {
-	const scelta_player = "Carta"
-	return(scelta_player)
+document.getElementById('bottone_2').onclick = Carta
+function Carta(){
+    console.log ("Hai scelto Carta")
+    Risultato("Carta", MossaComputer())
 }
 
-const selezione_player_Forbice = () => {
-	const scelta_player = "Forbice"
-	return(scelta_player)
+document.getElementById('bottone_3').onclick = Forbice
+function Forbice(){
+    console.log ("Hai scelto Forbice")
+    Risultato("Forbice", MossaComputer())
 }
-
-console.log(selezione_bot())
-console.log(selezione_player_Forbice())
-console.log(selezione_player_Carta())
-console.log(selezione_player_Sasso())
