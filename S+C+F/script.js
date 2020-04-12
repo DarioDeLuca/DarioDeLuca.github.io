@@ -13,23 +13,28 @@ function SconfittaGiocatore(){
     contatore_ia+=1
     console.log("Hai perso questo round; il tuo punteggio è ora di "+ contatore_giocatore + " a " + contatore_ia)
 }
-
 let Risultato = function (scelta_giocatore, scelta_ia) { 
-    console.log("Sto calcolando...")
-    if(scelta_giocatore === scelta_ia){console.log("Pareggio!, nessuno riceve un punto")}
-    else{if(scelta_giocatore==="Sasso"){
-            if(scelta_ia==="Forbice"){VincitaGiocatore()}//vince il player (sasso rompe forbice)
-            else{SconfittaGiocatore()} //vince l'ia (carta avvolge sasso)
-         }
-          if(scelta_giocatore==="Forbice"){
-              if(scelta_ia==="Carta"){VincitaGiocatore()}//vince il player (forbice taglia carta)
-              else{SconfittaGiocatore()}//vince l'ia (sasso rompe forbice)
-          }
-          if(scelta_giocatore==="Carta"){
-            if(scelta_ia==="Sasso"){VincitaGiocatore()}//vince il player (carta avvolge sasso)
-            else{SconfittaGiocatore()}//vince l'ia (forbice taglia carta)
-          }
-        }
+    
+    if(contatore_ia===10 || contatore_giocatore===10){
+        console.log("Fine dei giochi, abbiamo un vincitore!")
+    }
+    else{
+        if(scelta_giocatore === scelta_ia){console.log("Pareggio!, nessuno riceve un punto")}
+        else{
+            if(scelta_giocatore==="Sasso"){
+                if(scelta_ia==="Forbice"){VincitaGiocatore()}//vince il player (sasso rompe forbice)
+                else{SconfittaGiocatore()} //vince l'ia (carta avvolge sasso)
+            }
+            if(scelta_giocatore==="Forbice"){
+                if(scelta_ia==="Carta"){VincitaGiocatore()}//vince il player (forbice taglia carta)
+                else{SconfittaGiocatore()}//vince l'ia (sasso rompe forbice)
+            }
+            if(scelta_giocatore==="Carta"){
+                if(scelta_ia==="Sasso"){VincitaGiocatore()}//vince il player (carta avvolge sasso)
+                else{SconfittaGiocatore()}//vince l'ia (forbice taglia carta)
+            }
+        }   
+    }     
 }
    
 function MossaComputer(){
