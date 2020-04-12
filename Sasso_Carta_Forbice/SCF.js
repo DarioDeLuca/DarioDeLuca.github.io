@@ -43,7 +43,8 @@ let Risultato = function (scelta_giocatore, scelta_ia) {
         }   
     }     
 }
-   
+
+
 function MossaComputer(){
 	const lista = ["Sasso", "Carta", "Forbice"]
     const scelta =lista[Math.floor(Math.random() * lista.length)];
@@ -55,6 +56,9 @@ function MossaComputer(){
 document.getElementById('bottone_1').onclick = Sasso
 function Sasso(){
     console.log ("Hai scelto Sasso")
+    var immagine_player = document.createElement("img");
+    immagine_player.src="https://vikings.help/users/vikings/imgExtCatalog/big/m060.png"
+    document.getElementById("scelta_giocatore").appendChild(immagine_player)
     selezione=MossaComputer()
     Risultato("Sasso", selezione)
 }
@@ -62,6 +66,9 @@ function Sasso(){
 document.getElementById('bottone_2').onclick = Carta
 function Carta(){
     console.log ("Hai scelto Carta")
+    var immagine_player = document.createElement("img");
+    immagine_player.src="https://pngimage.net/wp-content/uploads/2018/06/foglio-di-carta-png.png"
+    document.getElementById("scelta_giocatore").appendChild(immagine_player)
     selezione=MossaComputer()
     Risultato("Carta", selezione)
 }
@@ -69,32 +76,43 @@ function Carta(){
 document.getElementById('bottone_3').onclick = Forbice
 function Forbice(){
     console.log ("Hai scelto Forbice")
+    var immagine_player = document.createElement("img");
+    immagine_player.src="https://mikadoitalia.com/wp-content/uploads/scissors-2.png"
+    document.getElementById("scelta_giocatore").appendChild(immagine_player)
     selezione=MossaComputer()
     Risultato("Forbice", selezione)
 }
 
+
+ 
+
+
 function SelezionaImmagine(){
-   
+    var immagine = document.createElement("img");
+    
     if (selezione==="Sasso"){
 
-        immagine="https://vikings.help/users/vikings/imgExtCatalog/big/m060.png"
-       
+        immagine.src="https://vikings.help/users/vikings/imgExtCatalog/big/m060.png"
+        document.getElementById("scelta_computer").appendChild(immagine)
     }
 
     if (selezione==="Forbice"){
-        immagine="https://cdn.iconscout.com/icon/premium/png-256-thumb/forbice-365179.png"
-        
+        immagine.src="https://mikadoitalia.com/wp-content/uploads/scissors-2.png"
+        document.getElementById("scelta_computer").appendChild(immagine)
 
     }
 
     if (selezione==="Carta"){
-        immagine="https://lh3.googleusercontent.com/proxy/ku4j6NnIwpSuSFjos81qIV-J4VIYdYn9fz8zQNh2aNW1jtjtId1djjMgEnMfXz3YXrHNMeR-qb6jNBYHp7SBtffUGJ6EKm9BaoyIj-GhlLyhnHvLZiubCq0q7b9Pu3SNINzATz8G" 
-       
+        immagine.src="https://pngimage.net/wp-content/uploads/2018/06/foglio-di-carta-png.png" 
+        document.getElementById("scelta_computer").appendChild(immagine)
     }
 
-    return immagine
+   
 
 }
+
+
+
 
 
  
