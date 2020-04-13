@@ -16,29 +16,60 @@ function SconfittaGiocatore(){
 }
 
 let Risultato = function (scelta_giocatore, scelta_ia) { 
+    var immagine = document.createElement("img");
     if(contatore_ia===10){
         console.log("Fine dei giochi, vince il computer!")
     }
     if (contatore_giocatore===10) {
     	console.log("Fine dei giochi, vince il player!")
     }
+
     else{
         if(scelta_giocatore === scelta_ia){
-            console.log("Pareggio!, nessuno riceve un punto")
-        }
-        else{
-            if(scelta_giocatore==="Sasso"){
-                if(scelta_ia==="Forbice"){VincitaGiocatore()}//vince il player (sasso rompe forbice)    
-                else{SconfittaGiocatore()} //vince l'ia (carta avvolge sasso)
+            if (scelta_ia==="Sasso"){
+                immagine.src="https://vikings.help/users/vikings/imgExtCatalog/big/m060.png"
+                document.getElementById("scelta_computer").appendChild(immagine)
             }
 
-            if(scelta_giocatore==="Forbice"){
-                if(scelta_ia==="Carta"){VincitaGiocatore()}//vince il player (forbice taglia carta)
-                else{SconfittaGiocatore()}//vince l'ia (sasso rompe forbice)
+            if (scelta_ia==="Forbice"){
+                immagine.src="https://mikadoitalia.com/wp-content/uploads/scissors-2.png"
+                document.getElementById("scelta_computer").appendChild(immagine)
+
             }
-            if(scelta_giocatore==="Carta"){
-                if(scelta_ia==="Sasso"){VincitaGiocatore()}//vince il player (carta avvolge sasso)
-                else{SconfittaGiocatore()}//vince l'ia (forbice taglia carta)
+
+            if (scelta_ia==="Carta"){
+                immagine.src="https://pngimage.net/wp-content/uploads/2018/06/foglio-di-carta-png.png" 
+                document.getElementById("scelta_computer").appendChild(immagine)
+            }
+        console.log("Pareggio!, nessuno riceve un punto")
+        }
+
+        else{
+            if(scelta_ia==="Sasso"){
+
+                immagine.src="https://vikings.help/users/vikings/imgExtCatalog/big/m060.png"
+                document.getElementById("scelta_computer").appendChild(immagine)
+
+
+                if(scelta_giocatore==="Forbice"){SconfittaGiocatore()}//vince il player (sasso rompe forbice)    
+                else{VincitaGiocatore()} //vince l'ia (carta avvolge sasso)
+            }
+
+            if(scelta_ia==="Forbice"){
+
+                immagine.src="https://mikadoitalia.com/wp-content/uploads/scissors-2.png"
+                document.getElementById("scelta_computer").appendChild(immagine)
+
+                if(scelta_giocatore==="Carta"){SconfittaGiocatore()}//vince il player (forbice taglia carta)
+                else{VincitaGiocatore()}//vince l'ia (sasso rompe forbice)
+            }
+            if(scelta_ia==="Carta"){
+
+                immagine.src="https://pngimage.net/wp-content/uploads/2018/06/foglio-di-carta-png.png" 
+                document.getElementById("scelta_computer").appendChild(immagine)
+
+                if(scelta_giocatore==="Sasso"){SconfittaGiocatore()}//vince il player (carta avvolge sasso)
+                else{VincitaGiocatore()}//vince l'ia (forbice taglia carta)
             }
         }   
     }     
@@ -84,38 +115,10 @@ function Forbice(){
 }
 
 
- 
 
+// BISOGNA CAPIRE COME FAR FUNZIONARE QUESTA !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-function SelezionaImmagine(){
-    var immagine = document.createElement("img");
-    
-    if (selezione==="Sasso"){
-
-        immagine.src="https://vikings.help/users/vikings/imgExtCatalog/big/m060.png"
-        document.getElementById("scelta_computer").appendChild(immagine)
-    }
-
-    if (selezione==="Forbice"){
-        immagine.src="https://mikadoitalia.com/wp-content/uploads/scissors-2.png"
-        document.getElementById("scelta_computer").appendChild(immagine)
-
-    }
-
-    if (selezione==="Carta"){
-        immagine.src="https://pngimage.net/wp-content/uploads/2018/06/foglio-di-carta-png.png" 
-        document.getElementById("scelta_computer").appendChild(immagine)
-    }
-
-   
-
+function RimozioneImmagini(){
+    document.getElementById("scelta_giocatore").reset()
+    document.getElementById("scelta_computer").reset()
 }
-
-
-
-
-
- 
-     // <img name="prova" src="https://vikings.help/users/vikings/imgExtCatalog/big/m060.png">
-
-      
