@@ -28,17 +28,20 @@ let Risultato = function (scelta_giocatore, scelta_ia) {
         if(scelta_giocatore === scelta_ia){
             if (scelta_ia==="Sasso"){
                 immagine.src="https://vikings.help/users/vikings/imgExtCatalog/big/m060.png"
+                document.getElementById("scelta_computer").innerHTML = ""
                 document.getElementById("scelta_computer").appendChild(immagine)
             }
 
             if (scelta_ia==="Forbice"){
                 immagine.src="https://mikadoitalia.com/wp-content/uploads/scissors-2.png"
+                document.getElementById("scelta_computer").innerHTML = ""
                 document.getElementById("scelta_computer").appendChild(immagine)
 
             }
 
             if (scelta_ia==="Carta"){
-                immagine.src="https://pngimage.net/wp-content/uploads/2018/06/foglio-di-carta-png.png" 
+                immagine.src="https://pngimage.net/wp-content/uploads/2018/06/foglio-di-carta-png.png"
+                document.getElementById("scelta_computer").innerHTML = ""
                 document.getElementById("scelta_computer").appendChild(immagine)
             }
         console.log("Pareggio!, nessuno riceve un punto")
@@ -48,6 +51,7 @@ let Risultato = function (scelta_giocatore, scelta_ia) {
             if(scelta_ia==="Sasso"){
 
                 immagine.src="https://vikings.help/users/vikings/imgExtCatalog/big/m060.png"
+                document.getElementById("scelta_computer").innerHTML = ""
                 document.getElementById("scelta_computer").appendChild(immagine)
 
 
@@ -58,6 +62,7 @@ let Risultato = function (scelta_giocatore, scelta_ia) {
             if(scelta_ia==="Forbice"){
 
                 immagine.src="https://mikadoitalia.com/wp-content/uploads/scissors-2.png"
+                document.getElementById("scelta_computer").innerHTML = ""
                 document.getElementById("scelta_computer").appendChild(immagine)
 
                 if(scelta_giocatore==="Carta"){SconfittaGiocatore()}//vince il player (forbice taglia carta)
@@ -66,6 +71,7 @@ let Risultato = function (scelta_giocatore, scelta_ia) {
             if(scelta_ia==="Carta"){
 
                 immagine.src="https://pngimage.net/wp-content/uploads/2018/06/foglio-di-carta-png.png" 
+                document.getElementById("scelta_computer").innerHTML = ""
                 document.getElementById("scelta_computer").appendChild(immagine)
 
                 if(scelta_giocatore==="Sasso"){SconfittaGiocatore()}//vince il player (carta avvolge sasso)
@@ -89,6 +95,7 @@ function Sasso(){
     console.log ("Hai scelto Sasso")
     var immagine_player = document.createElement("img");
     immagine_player.src="https://vikings.help/users/vikings/imgExtCatalog/big/m060.png"
+    document.getElementById("scelta_giocatore").innerHTML = "";
     document.getElementById("scelta_giocatore").appendChild(immagine_player)
     selezione=MossaComputer()
     Risultato("Sasso", selezione)
@@ -99,6 +106,7 @@ function Carta(){
     console.log ("Hai scelto Carta")
     var immagine_player = document.createElement("img");
     immagine_player.src="https://pngimage.net/wp-content/uploads/2018/06/foglio-di-carta-png.png"
+    document.getElementById("scelta_giocatore").innerHTML = "";
     document.getElementById("scelta_giocatore").appendChild(immagine_player)
     selezione=MossaComputer()
     Risultato("Carta", selezione)
@@ -109,6 +117,7 @@ function Forbice(){
     console.log ("Hai scelto Forbice")
     var immagine_player = document.createElement("img");
     immagine_player.src="https://mikadoitalia.com/wp-content/uploads/scissors-2.png"
+     document.getElementById("scelta_giocatore").innerHTML = "";
     document.getElementById("scelta_giocatore").appendChild(immagine_player)
     selezione=MossaComputer()
     Risultato("Forbice", selezione)
