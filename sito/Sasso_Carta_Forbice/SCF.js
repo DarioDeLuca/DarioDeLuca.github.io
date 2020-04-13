@@ -10,25 +10,27 @@ let selezione = null
 function VincitaGiocatore(){
     contatore_giocatore+=1
     console.log("Hai vinto questo round; il tuo punteggio è ora di "+ contatore_giocatore + " a " + contatore_ia)
-    badge_punteggi.innerHTML= "Hai vinto questo round; il tuo punteggio è ora di "+ contatore_giocatore + " a " + contatore_ia
+    badge_punteggi.innerHTML= "Hai vinto questo round; il punteggio è ora di "+ contatore_giocatore + " a " + contatore_ia
 }
 function SconfittaGiocatore(){
     contatore_ia+=1
     console.log("Hai perso questo round; il tuo punteggio è ora di "+ contatore_giocatore + " a " + contatore_ia)
-    badge_punteggi.innerHTML= "Hai vinto questo round; il tuo punteggio è ora di "+ contatore_giocatore + " a " + contatore_ia
+    badge_punteggi.innerHTML= "Hai perso questo round; il punteggio è ora di "+ contatore_giocatore + " a " + contatore_ia
 }
 
 let Risultato = function (scelta_giocatore, scelta_ia) { 
     var immagine = document.createElement("img");
-    if(contatore_ia===10){
+    if (contatore_ia===10 || contatore_giocatore===10){
+        if(contatore_ia===10){
         console.log("Fine dei giochi, vince il computer!")
-        badge_punteggi.innerHTML= "Fine dei giochi, vince il computer!"
-    }
-    if (contatore_giocatore===10) {
+        badge_punteggi.innerHTML= "Fine dei giochi, vince il computer!" 
+        }   
+        if (contatore_giocatore===10) {
         console.log("Fine dei giochi, vince il player!")
         badge_punteggi.innerHTML= "Fine dei giochi, vince il player!"
+        }
     }
-
+    
     else{
         if(scelta_giocatore === scelta_ia){
             if (scelta_ia==="Sasso"){
@@ -50,6 +52,7 @@ let Risultato = function (scelta_giocatore, scelta_ia) {
                 document.getElementById("scelta_computer").appendChild(immagine)
             }
         console.log("Pareggio!, nessuno riceve un punto")
+        badge_punteggi.innerHTML= "Pareggio!, nessuno riceve un punto"
         }
 
         else{
