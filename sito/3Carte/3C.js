@@ -1,22 +1,7 @@
 const badge_punteggi= document.getElementById('contatore_punteggi')
-let contatore_giocatore=0
-let contatore_ia=0
-const carte = ["retrocarte.jpg", "retrocarte.jpg", "retrocarte.jpg"]
-
-function VincitaGiocatore(){
-    contatore_giocatore+=1
-    console.log("Hai vinto questo round; il tuo punteggio è ora di "+ contatore_giocatore + " a " + contatore_ia)
-    badge_punteggi.innerHTML= "Hai vinto questo round; il punteggio è ora di "+ contatore_giocatore + " a " + contatore_ia
-}
-function SconfittaGiocatore(){
-    contatore_ia+=1
-    console.log("Hai perso questo round; il tuo punteggio è ora di "+ contatore_giocatore + " a " + contatore_ia)
-    badge_punteggi.innerHTML= "Hai perso questo round; il punteggio è ora di "+ contatore_giocatore + " a " + contatore_ia
-}
-
-
-
-        
+let counter=0
+const carte = ["reginacuori.png", "assofiori.jpg", "assopicche.jpg"]
+const posizioni = ["primacarta", "secondacarta", "terzacarta"]    
             
            
 function Inizializzazione1(){
@@ -47,6 +32,30 @@ function Disposizione(){
     Inizializzazione3()
 } 
   
+
+function Scopri(posto){
+  let immagine = document.createElement("img");
+  const lista = carte
+  let carta = posizioni[posto]
+
+  let indice =  Math.floor(Math.random() * 3 ) ;   
+  immagine.src = lista[indice]
+  if (lista[indice]== "reginacuori.png"){
+      console.log("Hai vinto!")
+      badge_punteggi.innerHTML= "Hai vinto!"
+  } 
+  else{
+    console.log("Hai perso!")
+    badge_punteggi.innerHTML= "Hai perso!"
+  } 
+  document.getElementById(carta).innerHTML = ""
+  document.getElementById(carta).appendChild(immagine)
+
+}
+
+
+
+
 //function SelezioneCarta(){
   //  let immagine = document.createElement("img");
  //   const lista = carte
