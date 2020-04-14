@@ -1,6 +1,7 @@
 const badge_punteggi= document.getElementById('contatore_punteggi')
 let counter=0
 const carte = ["reginacuori.png", "assofiori.jpg", "assopicche.jpg"]
+const lista = shuffle(carte)
 const posizioni = ["primacarta", "secondacarta", "terzacarta"]    
             
            
@@ -35,43 +36,44 @@ function Disposizione(){
 
 function Scopri(posto){
   let immagine = document.createElement("img");
-  const lista = carte
-  let carta = posizioni[posto]
-
-  let indice =  Math.floor(Math.random() * 3 ) ;   
-  immagine.src = lista[indice]
-  if (lista[indice]== "reginacuori.png"){
+  console.log(lista)
+  let carta = posizioni[posto]   
+  immagine.src = lista[posto]
+if (counter!=2){
+  if (lista[posto]== "reginacuori.png"){
       console.log("Hai vinto!")
-      badge_punteggi.innerHTML= "Hai vinto!"
+      counter+=3
+     
   } 
   else{
-    console.log("Hai perso!")
-    badge_punteggi.innerHTML= "Hai perso!"
-  } 
+      counter+=1
+      console.log("Riprova")
+      badge_punteggi.innerHTML= "Riprova"
+  }  
   document.getElementById(carta).innerHTML = ""
   document.getElementById(carta).appendChild(immagine)
+}
+
+if (counter>=3){
+badge_punteggi.innerHTML= "Hai vinto!!!"
+  }
+
+if (counter===2){
+  badge_punteggi.innerHTML= "HAI PERSO!!!"
+}
+
 
 }
 
 
+function shuffle(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+}
 
-
-//function SelezioneCarta(){
-  //  let immagine = document.createElement("img");
- //   const lista = carte
-  //  let indice = [];
-  //  const posizione=["primacarta", "secondacarta", "terzacarta"]
-  ///  while(indice.length < 3){
- //       var r = Math.floor(Math.random() * 3 ) ;
- //       if(indice.indexOf(r) === -1) 
-//            indice.push(r);
- //   }  
- //   console.log(indice);    
- //   for (let i = 0; i < indice.length; i++) {
- //       const scelta = lista[indice[i]];
-  //      immagine.src = scelta
-  //      document.getElementById(posizione[i]).appendChild(immagine)
-       
-//}   
-//}            
-   //
