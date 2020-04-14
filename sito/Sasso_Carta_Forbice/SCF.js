@@ -2,7 +2,10 @@ const button1 = document.getElementById('bottone_1')
 const button2 = document.getElementById('bottone_2')
 const button3 = document.getElementById('bottone_3')
 const badge_punteggi= document.getElementById('contatore_punteggi')
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7b8210f3e39c6ac55f275800f5f5eff3cd7581a4
 
 let contatore_giocatore=0
 let contatore_ia=0
