@@ -13,11 +13,10 @@
   </head>
   <body>
     <h1>Il gioco dei dadi</h1>
-    <p>
-        Benvenuto! Quanti tiri di sei dadi a sei facce credi di impiegare per ottenere un totale di / punti?
-        Inserisci la cifra nella casella qui sotto, clicca sul ponte di conferma ed inizia a tirare!
-    </p>
-    
+    <div class="alert alert-secondary text-center" role="alert" id="spazio_scritte">
+      Benvenuto! Quanti tiri di sei dadi a sei facce credi di impiegare per ottenere un totale di 100 punti?
+      Inserisci la cifra nella casella qui sotto, clicca sul ponte di conferma ed inizia a tirare!
+    </div>    
     <form>
       <div class="form-group">
         <label for="display_puntata">Quanti tiri credi ti serviranno?</label>
@@ -27,6 +26,8 @@
       <button type="button" class="btn btn-dark" id="bottone_2" value="-">CONFERMA SCOMESSA</button>
    
     <button type="button" class="btn btn-dark" id="bottone_1" value="-">LANCIA I DADI!</button>
+
+ 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
