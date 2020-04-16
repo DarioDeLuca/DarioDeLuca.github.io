@@ -3,35 +3,16 @@ let counter=0
 const carte = ["reginacuori.png", "assofiori.jpg", "assopicche.jpg"]
 const lista = shuffle(carte)
 const posizioni = ["primacarta", "secondacarta", "terzacarta"]    
-            
-           
-function Inizializzazione1(){
-    let immagine = document.createElement("img");
-    immagine.src = "retrocarte.jpg"
-    document.getElementById("primacarta").appendChild(immagine)
-   
 
+
+function Inizializzazione(){
+    for(i=0;i<3;i++){
+      let immagine = document.createElement("img");
+      immagine.src = "retrocarte.jpg"
+      document.getElementById(posizioni[i]).appendChild(immagine)
+
+    } 
 }
-   function Inizializzazione2(){
-    let immagine = document.createElement("img");
-    immagine.src = "retrocarte.jpg"
-    document.getElementById("secondacarta").appendChild(immagine)
-   
-
-}    
-function Inizializzazione3(){
-    let immagine = document.createElement("img");
-    immagine.src = "retrocarte.jpg"
-    document.getElementById("terzacarta").appendChild(immagine)
-
-}
-
-
-function Disposizione(){
-    Inizializzazione1()
-    Inizializzazione2()
-    Inizializzazione3()
-} 
   
 
 function Scopri(posto){

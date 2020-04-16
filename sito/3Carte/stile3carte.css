@@ -16,3 +16,8 @@ h1{
 .text-center{
 	margin: 50px;
 }
+
+
+.col-sm{
+	text-align: center;
+}

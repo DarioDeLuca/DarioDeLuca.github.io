@@ -13,19 +13,52 @@
   </head>
   <body>
     <h1>Il gioco dei dadi</h1>
-    <div class="alert alert-secondary text-center" role="alert" id="spazio_scritte">
+    <div class="container tabella">
+  <div class="alert alert-secondary text-center" role="alert" id="spazio_scritte">
       Benvenuto! Quanti tiri di sei dadi a sei facce credi di impiegare per ottenere un totale di 100 punti?
       Inserisci la cifra nella casella qui sotto, clicca sul ponte di conferma ed inizia a tirare!
-    </div>    
-    <form>
+  </div>    
+
+  <div class="row">
+   <div  class="col-sm" > 
+     <form>
       <div class="form-group">
         <label for="display_puntata">Quanti tiri credi ti serviranno?</label>
         <input type="email" class="form-control" id="display_puntata">
       </div> 
     </form>
       <button type="button" class="btn btn-dark" id="bottone_2" value="-">CONFERMA SCOMESSA</button>
+      <button type="button" class="btn btn-dark" id="bottone_1" value="-">LANCIA I DADI!</button>
+    </div>
+  </div>
+
+  <div class="row" id="secondariga">
+
+    <div  class="col-sm" id="primodado" > 
+    </div>
+
+    <div  class="col-sm" id="secondodado" > 
+    </div>
+
+    <div  class="col-sm" id="terzodado" > 
+    </div>
+
+    <div  class="col-sm" id="quartodado" > 
+    </div>
+
+    <div  class="col-sm" id="quintodado" > 
+    </div>
+
+    <div  class="col-sm" id="sestodado" > 
+    </div>
+
+  </div>
+  
+  
+</div>
+
+    
    
-    <button type="button" class="btn btn-dark" id="bottone_1" value="-">LANCIA I DADI!</button>
 
  
 
