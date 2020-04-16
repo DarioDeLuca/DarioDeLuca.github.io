@@ -20,7 +20,7 @@ function SconfittaGiocatore(){
 }
 
 let Risultato = function (scelta_giocatore, scelta_ia) { 
-    var immagine = document.createElement("img");
+    let immagine = document.createElement("img");
     if (contatore_ia===10 || contatore_giocatore===10){
         if(contatore_ia===10){
         console.log("Fine dei giochi, vince il computer!")
@@ -102,7 +102,7 @@ function MossaComputer(){
 document.getElementById('bottone_1').onclick = Sasso
 function Sasso(){
     console.log ("Hai scelto Sasso")
-    var immagine_player = document.createElement("img");
+    let immagine_player = document.createElement("img");
     immagine_player.src="https://vikings.help/users/vikings/imgExtCatalog/big/m060.png"
     document.getElementById("scelta_giocatore").innerHTML = "";
     document.getElementById("scelta_giocatore").appendChild(immagine_player)
@@ -113,7 +113,7 @@ function Sasso(){
 document.getElementById('bottone_2').onclick = Carta
 function Carta(){
     console.log ("Hai scelto Carta")
-    var immagine_player = document.createElement("img");
+    let immagine_player = document.createElement("img");
     immagine_player.src="https://pngimage.net/wp-content/uploads/2018/06/foglio-di-carta-png.png"
     document.getElementById("scelta_giocatore").innerHTML = "";
     document.getElementById("scelta_giocatore").appendChild(immagine_player)
@@ -124,9 +124,9 @@ function Carta(){
 document.getElementById('bottone_3').onclick = Forbice
 function Forbice(){
     console.log ("Hai scelto Forbice")
-    var immagine_player = document.createElement("img");
+    let immagine_player = document.createElement("img");
     immagine_player.src="https://mikadoitalia.com/wp-content/uploads/scissors-2.png"
-     document.getElementById("scelta_giocatore").innerHTML = "";
+    document.getElementById("scelta_giocatore").innerHTML = "";
     document.getElementById("scelta_giocatore").appendChild(immagine_player)
     selezione=MossaComputer()
     Risultato("Forbice", selezione)

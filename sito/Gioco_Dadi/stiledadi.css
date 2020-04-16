@@ -1,0 +1,17 @@
+h1{
+	text-align: center;
+	padding: 30px;
+	background-color: #cd5c5c;
+	color: white;
+}
+
+
+.tabella{
+	border: 1px solid #000;
+	margin-top: 50px;
+	padding: 10px;
+}
+
+.text-center{
+	margin: 50px;
+}
