@@ -7,7 +7,7 @@ let somma=0
 let contatore=0
 let valore=0
 let scelta_pc=0 
-const obbiettivo=100
+const obbiettivo=150
 
 
 function LancioDadi(){ 
@@ -39,9 +39,7 @@ function ErroreCalcolato(){
 	if(random===1){scelta_pc-=k}
 	else {scelta_pc+=k}
 	if(scelta_pc<0){scelta_pc= -scelta_pc}
-	console.log("Bene, abbiamo finito, avevo scommesso ci saresti riuscito in "+ scelta_pc + " tiri, vediamo chi si è  avvicinato di più")
-	dialogo.innerHTML= "Bene, abbiamo finito, avevo scommesso ci saresti riuscito in "+ scelta_pc + " tiri, vediamo chi si è  avvicinato di più" 
-	return(scelta_pc)
+	return(k)
 }
 
 function Verifica (a, count){
@@ -54,25 +52,39 @@ function Verifica (a, count){
 	console.log("il player ha sbagliato di "+ errore_giocatore)
 	if(errore_giocatore < falso_errore){
 		console.log("Ottimo lavoro, hai vinto!")
-		dialogo.innerHTML="Ottimo lavoro, avevi ragione e sei riuscito abattermi!"
+		dialogo.innerHTML="Ottimo lavoro, avevi ragione e sei riuscito a battermi, non avrei dovuto scommettere su "+scelta_pc+" tiri"
+		document.getElementById('bottone_1').disabled=true
+		document.getElementById('bottone_2').disabled=true
 	}
 	else if(falso_errore < errore_giocatore){
 		console.log("A quanto pare avevo ragione io")
-		dialogo.innerHTML="Peccato, non sei riuscito a vincere"
+		dialogo.innerHTML="Peccato, non sei riuscito a vincere, sapevo avrei vinto puntando su "+scelta_pc+" tiri"
+		document.getElementById('bottone_1').disabled=true
+		document.getElementById('bottone_2').disabled=true
 	}
-	else{
+	if(a===scelta_pc){
+
 		console.log("parità")
-		dialogo.innerHTML="Impossibile?! Come hai fatto a capire cosa stessi pensando?"
+		dialogo.innerHTML="Impossibile?! Come hai fatto a capire volessi scommettere su "+scelta_pc+" tiri?"
+		document.getElementById('bottone_1').disabled=true
+		document.getElementById('bottone_2').disabled=true
 	}
 }
 
 
 function Registra(){
 	valore = document.getElementById("display_puntata").value
-	console.log("Ebbene, credi di farcela in "+ valore + " tiri?")
-	dialogo.innerHTML="Ebbene, credi di farcela in "+ valore + " tiri? Perfetto, chi tra noi si avvicinerà maggiormente al numero estto di tiri vincerà"
+	let scelta=parseInt(valore)
+	if ((scelta/1)===scelta ){
+		console.log("Ebbene, credi di farcela in "+ valore + " tiri?")
+		dialogo.innerHTML="Ebbene, credi di farcela in "+ valore + " tiri? Perfetto, chi tra noi si avvicinerà maggiormente al numero esatto di tiri vincerà"
+		document.getElementById('bottone_1').disabled=false
+	}
+	else{
+		dialogo.innerHTML="Tu devi essere quello simpatico della famiglia..."
+		document.getElementById('bottone_1').disabled=true
+	}
 }
-
 bottone_scelta.onclick=Registra    
 bottone_lancio.onclick=LancioDadi
 

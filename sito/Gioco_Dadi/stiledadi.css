@@ -8,12 +8,13 @@ h1{
 
 .tabella{
 	border: 1px solid #000;
-	margin-top: 50px;
-	padding: 10px;
+
+	background-color: white;
+
 }
 
 .text-center{
-	margin: 50px;
+	margin: 25px;
 }
 
 #secondariga{
@@ -22,4 +23,13 @@ h1{
 
 .col-sm{
 	text-align: center;
+}
+
+body{
+	background-image: url(../sfondo.jpg); 	
+}
+
+
+#contatore_punteggi{
+	margin-bottom: 50px;
 }

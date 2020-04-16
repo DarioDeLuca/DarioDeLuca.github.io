@@ -17,31 +17,29 @@ function Inizializzazione(){
 
 function Scopri(posto){
   let immagine = document.createElement("img");
-  console.log(lista)
   let carta = posizioni[posto]   
   immagine.src = lista[posto]
-if (counter!=2){
-  if (lista[posto]== "reginacuori.png"){
-      console.log("Hai vinto!")
-      counter+=3
-     
-  } 
-  else{
-      counter+=1
-      console.log("Riprova")
-      badge_punteggi.innerHTML= "Riprova"
-  }  
-  document.getElementById(carta).innerHTML = ""
-  document.getElementById(carta).appendChild(immagine)
-}
-
-if (counter>=3){
-badge_punteggi.innerHTML= "Hai vinto!!!"
+  if (counter!=2){
+    if (lista[posto]== "reginacuori.png"){
+        counter+=3
+       
+    } 
+    else{
+        counter+=1
+        console.log("Riprova")
+        badge_punteggi.innerHTML= "Riprova"
+    }  
+    document.getElementById(carta).innerHTML = ""
+    document.getElementById(carta).appendChild(immagine)
   }
 
-if (counter===2){
-  badge_punteggi.innerHTML= "HAI PERSO!!!"
-}
+  if (counter>=3){
+  badge_punteggi.innerHTML= "Hai vinto!!!"
+    }
+
+  if (counter===2){
+    badge_punteggi.innerHTML= "HAI PERSO!!!"
+  }
 
 
 }
